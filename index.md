@@ -1,37 +1,72 @@
-## Welcome to GitHub Pages
+<!Doctype html>
+<html lang="en">
+<meta charset="=utf-8">
+<title> Simple Interest Calculator </title>
+<link rel="stylesheet" href="style.css"/>
 
-You can use the [editor on GitHub](https://github.com/jdips24/vftvk-Simple-Interest-Calculator/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<script>
+function answer()
+{
+   p= document.getElementById("p") .value;
+   n= document.getElementById("n") .value;
+   r= document.getElementById("r") .value;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+   var
+    Interest=(p*r*n)/100;
+    var total=parseInt(Interest)+ parseInt(p);
+     console.log(total)
+	 
+  Entered_amount= document.getElementById("Entered_amount");
+  Entered_amount.innerHTML = p
+  Entered_interest= document.getElementById("Entered_interest");
+  Entered_interest.innerHTML = r + "%"
+  Calculated_Amount= document.getElementById("Calculated_Amount");
+  Calculated_Amount.innerHTML = total
+  
+  }
+  function slidervalue()
+  {
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+    output.innerHTML = slider.value; 
 
-### Markdown
+  } 
+</script>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<body>
+    
+    <div class="calculator">
+    <h1> Simple Interest Calculator</h1>
+    <br>
+    <label for = "Amount"> Amount: </label>
+    <input id="p">
+    <br> </br>
+    <label for = "Interest">Interest Rate: </label>
+    <input type="range" id = "r" min="1" max="100" value="20" class="slider" id="myRange" oninput="slidervalue()"> 
+    <br> </br>
+    <label for="time"> No. of Year: </label> 
+    <input id="n" type="number" min='1' max='10' value='0' placeholder="Enter No. of Year" >
+    <br> </br>
+    <button onclick="answer()">Compute Interest</button>
+    <table>
+        <tr>
+            <td>If you deposit USD : </td>
+            <td><p id="Entered_amount"></p></td>
+        </tr>
+		<tr>
+            <td>At an Interest rate of :  </td>
+            <td> <p id="Entered_interest"> </p></td>
+        </tr>
+        <tr>
+            <td>You will receive an Amount of : </td>
+            <td> <p id="Calculated_Amount"></p></td>
+        </tr>
+        		
+    </table>
+	<br>
+       <p> &copy;Everyone Can Get Rich </p>
+</div>
 
-```markdown
-Syntax highlighted code block
+</body>
+</html>
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jdips24/vftvk-Simple-Interest-Calculator/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
